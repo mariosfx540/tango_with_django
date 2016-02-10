@@ -22,13 +22,29 @@ SECRET_KEY = '@(qmbv=hz*_el*)=s2#ekctr9qv!2g@m38-l-!5&0sf56l0d_('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+#TEMPLATE_PATH = ('/home/marios540/Documents/TangoPy/tango_with_django_project/',)
+
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+
+TEMPLATE_DIRS = (TEMPLATE_PATH,)
+
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#STATIC_PATH = ('/home/marios540/Documents/TangoPy/tango_with_django_project/',)
+
+STATIC_PATH = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_DIRS = ( STATIC_PATH,)
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # Absolute path to the media directory
+
+
 
 # Application definition
-
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,6 +64,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
+
 
 ROOT_URLCONF = 'tango_with_django_project.urls'
 
