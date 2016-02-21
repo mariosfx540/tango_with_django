@@ -55,6 +55,11 @@ INSTALLED_APPS = (
     'rango',
 )
 
+PASSWORD_HASHERS = (
+	'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+	'django.contrib.auth.hashers.PBKDF2HA1PasswordHasher',
+	)
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -85,6 +90,8 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+
+LOGIN_URL = '/rango/login/'
 
 TIME_ZONE = 'UTC'
 
