@@ -22,8 +22,6 @@ SECRET_KEY = '@(qmbv=hz*_el*)=s2#ekctr9qv!2g@m38-l-!5&0sf56l0d_('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#TEMPLATE_PATH = ('/home/marios540/Documents/TangoPy/tango_with_django_project/',)
-
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 
 TEMPLATE_DIRS = (TEMPLATE_PATH,)
@@ -32,7 +30,6 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-#STATIC_PATH = ('/home/marios540/Documents/TangoPy/tango_with_django_project/',)
 
 STATIC_PATH = os.path.join(BASE_DIR, 'static')
 
@@ -53,7 +50,15 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rango',
+	'registration',
 )
+
+#Dealing with registration-redux
+REGISTRATION_OPEN = True
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+LOGIN_REDIRECT_URL = '/rango/'
+LOGIN_URL = '/accounts/login/'
 
 
 
@@ -88,7 +93,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-LOGIN_URL = '/rango/login/'
+LOGIN_URL = '/accounts/login'
 
 TIME_ZONE = 'UTC'
 
